@@ -32,7 +32,11 @@ function listCocktails(){
             listItem.textContent =cocktail.strDrink;
             listItem.setAttribute("class", "listItem");
             
-            
+            listItem.addEventListener("click", () => {
+                selectedCocktailId = cocktail.idDrink;
+                setCocktailDetails();
+            })
+
             //add <li> element to <ul>
             list.append(listItem)  
         })
