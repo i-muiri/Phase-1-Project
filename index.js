@@ -4,6 +4,8 @@ const glass = document.getElementById("glass")
 const image = document.getElementById("image")
 const instructions = document.getElementById("instructions")
 
+const ingList = document.getElementById("ingList")
+
 
 let cocktails=[];
 
@@ -54,5 +56,13 @@ function setCocktailDetails(){
     image.setAttribute("src", cocktail.strDrinkThumb);
     instructions.textContent = cocktail.strInstructions;
 
-
+    Object.keys(cocktail)
+    .filter((key) => key.includes("strIngredient") && cocktail[key])
+    .forEach((key) => {
+        const listItem =document.createElement("li");
+        listItem.textContent = cocktail[key];
+        listItem.setAttribute("class", "ingr");
+        //add ingredients <li> to <ul>
+        ingList.append(listItem);
+    })
 }
