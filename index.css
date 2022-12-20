@@ -114,3 +114,8 @@ p {
     font-size: 17px;
     text-align: center;
 }
+#search{
+    margin-left: 20px;
+    border-radius: 7px;
+    padding: 6px 30px;
+}

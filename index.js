@@ -9,6 +9,7 @@ const ingList = document.getElementById("ingList")
 
 let cocktails=[];
 
+
 window.addEventListener('load', () => {
     getCocktails();
 })
@@ -56,6 +57,7 @@ function setCocktailDetails(){
     image.setAttribute("src", cocktail.strDrinkThumb);
     instructions.textContent = cocktail.strInstructions;
 
+    removeChilds(ingList)
     Object.keys(cocktail)
     .filter((key) => key.includes("strIngredient") && cocktail[key])
     .forEach((key) => {
@@ -65,4 +67,10 @@ function setCocktailDetails(){
         //add ingredients <li> to <ul>
         ingList.append(listItem);
     })
+}
+
+const removeChilds = (parent) => {
+    while (parent.lastChild){
+        parent.removeChild(parent.lastChild);
+    }
 }
