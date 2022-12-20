@@ -68,3 +68,21 @@ h3 {
     color: teal;
     margin-left: 20px;
 }
+
+#drinkInfo2 {
+    margin-top: 40px;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+img{
+    max-width: 49%;
+    max-height: 100%;
+}
+.ingredients{
+    width: 49%;
+    height: 100%;
+}
