@@ -1,7 +1,21 @@
+let cocktails=[];
+
 window.addEventListener('load', () => {
-    //getCocktails();
+    getCocktails();
 })
 
-fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a') 
+function getCocktails(){
+fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) => {
+    cocktails = data.drinks;
+    listCocktails();
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+}
+
+function listCocktails(){
+    console.log({cocktails});
+}
