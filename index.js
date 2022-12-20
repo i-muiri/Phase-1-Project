@@ -18,4 +18,15 @@ fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
 
 function listCocktails(){
     console.log({cocktails});
+
+    if (cocktails) {
+        cocktails.forEach((cocktail, id) => {
+            const listItem = document.createElement("li");
+            listItem.textContent =cocktail.strDrink;
+            listItem.setAttribute("class", "listItem");
+
+            list.append(listItem)  
+        })
+        
+    }
 }
