@@ -1,4 +1,7 @@
-
+const loginBtn = document.getElementById("loginBtn");
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+const login = document.getElementById("login");
 const list = document.getElementById("list");
 const search = document.getElementById("search");
 
@@ -17,7 +20,16 @@ window.addEventListener("load", () => {
   getCocktails();
 });
 
+loginBtn.addEventListener("click", () => {
+  const username = usernameInput.value;
+  const password = passwordInput.value;
 
+  if (!username || username == "" || !password || password == "") {
+    alert("Fill in all the fields");
+  } else {
+    login.style.visibility = "hidden";
+  }
+});
 
 search.addEventListener("input", () => {
   searchText = search.value.toLowerCase();
